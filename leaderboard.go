@@ -47,4 +47,3 @@ func NewLeaderBoard(size int) LeaderBoard{
   return lb
 }
 
-
