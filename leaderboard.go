@@ -2,7 +2,7 @@ package leaderboard
 import(
 "fmt"
 )
-//Item is an interface for a leaderboard item. It only exposesa comparison method
+//Item is an interface for a leaderboard item. It only exposes a comparison method
 type Item interface{
   LessThan(*Item) bool
 }
