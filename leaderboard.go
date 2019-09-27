@@ -7,11 +7,11 @@ type Item interface {
 	LessThan(Item) bool
 }
 
-//LeaderBoard implements a leaderboard
-type LeaderBoard []*Item
+//Board implements a leaderboard
+type Board []*Item
 
 //Collect adds an item to a leaderboard, at the proper position
-func (lb *LeaderBoard) Collect(newItem Item) {
+func (lb *Board) Collect(newItem Item) {
 	if len(*lb) == cap(*lb) && newItem.LessThan(*(*lb)[len(*lb)-1]) {
 		//if leaderboard is full and the new item is smaller than the last item in leaderboard, we can just discard it
 		return
@@ -35,7 +35,7 @@ func (lb *LeaderBoard) Collect(newItem Item) {
 }
 
 //New creates a new leaderboard of a size
-func New(size int) LeaderBoard {
+func New(size int) Board {
 	lb := make([]*Item, 0, size)
 	return lb
 }
